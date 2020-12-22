@@ -16,16 +16,12 @@ for num in range(7, pages):
 
 '''
 
-
-
 import pyautogui
 import time
-m=100
-while m>0:
+
+m = 100
+while m > 0:
     time.sleep(1)
     pyautogui.typewrite('You have challenged a wrong person!\n')
     pyautogui.press('enter')
-    m=m-1
-
-
-
+    m = m - 1
