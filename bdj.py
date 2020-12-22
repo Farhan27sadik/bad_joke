@@ -1,4 +1,4 @@
-''''
+"""
 
 import pyttsx3
 import PyPDF2
@@ -14,7 +14,7 @@ for num in range(7, pages):
     speaker.say(text)
     speaker.runAndWait()
 
-'''
+"""
 
 import pyautogui
 import time
