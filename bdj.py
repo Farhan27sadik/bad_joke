@@ -18,10 +18,17 @@ for num in range(7, pages):
 
 import pyautogui
 import time
+import PyPDF2
 
-m = 100
-while m > 0:
-    time.sleep(1)
-    pyautogui.typewrite('You have challenged a wrong person!\n')
-    pyautogui.press('enter')
-    m = m - 1
+book = open('book.pdf', 'rb')
+pdfReader = PyPDF2.PdfFileReader(book)
+pages = pdfReader.numPages
+
+for num in range(0, pages):
+    page = pdfReader.getPage(num)
+    text = page.extractText()
+
+    for line in text.split('\n'):
+        time.sleep(1)
+        pyautogui.typewrite(line+'\n')
+        pyautogui.press('enter')
